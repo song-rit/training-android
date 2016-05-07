@@ -16,7 +16,6 @@ public class ArrayAdapterExample extends AppCompatActivity {
 
     private ListView listView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
