@@ -37,6 +37,7 @@ public class DialogCustomExample extends AppCompatActivity {
 
             }
         });
+        builder.setCancelable(false);
         builder.show();
 
     }
