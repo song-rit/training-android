@@ -11,7 +11,13 @@
         <activity android:name=".DialogBasicExample" />
         <activity android:name=".DialogListExample" />
         <activity android:name=".DialogChoiceExample"></activity>
-        <activity android:name=".DialogCustomExample"></activity>
+        <activity android:name=".DialogCustomExample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
