@@ -7,22 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="th.ac.sut.dialog.DialogListExample">
-
+    tools:context="th.ac.sut.dialog.DialogChoiceExample">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="List Dialog"
+        android:text="Choice Dialog"
         android:textColor="@android:color/holo_red_light"
         android:textSize="25sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonDialogList"
+        android:id="@+id/buttonDialogChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

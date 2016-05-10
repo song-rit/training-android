@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class DialogListExample extends AppCompatActivity {
+public class DialogChoiceExample extends AppCompatActivity {
 
     private Button button;
 
@@ -18,7 +18,7 @@ public class DialogListExample extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialog_list_example);
+        setContentView(R.layout.activity_dialog_choice_example);
 
         infixView();
 
@@ -26,7 +26,7 @@ public class DialogListExample extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(DialogListExample.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(DialogChoiceExample.this);
                 builder.setTitle("Select One Name:-");
 
                 builder.setItems(FAMILY, new DialogInterface.OnClickListener() {
@@ -46,6 +46,6 @@ public class DialogListExample extends AppCompatActivity {
     }
 
     private void infixView() {
-        button = (Button) findViewById(R.id.buttonDialogList);
+        button = (Button) findViewById(R.id.buttonDialogChoice);
     }
 }
