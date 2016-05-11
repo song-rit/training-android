@@ -1,8 +1,8 @@
 package th.ac.sut.listview;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +12,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ArrayAdapterExample extends AppCompatActivity {
+public class ListViewBasicExample extends AppCompatActivity {
 
     private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.array_adapter_example);
+        setContentView(R.layout.list_view_custom_example);
 
         infixView();
 
@@ -46,8 +46,7 @@ public class ArrayAdapterExample extends AppCompatActivity {
             }
         });
     }
-
     private void infixView() {
-        listView = (ListView) findViewById(R.id.listView);
+        listView = (ListView) findViewById(R.id.listView_custom);
     }
 }
