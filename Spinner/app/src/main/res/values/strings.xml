@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Spinner</string>
+    <string-array name="year">
+        <item>2557</item>
+        <item>2556</item>
+    </string-array>
+
+    <string-array name="term">
+        <item>2</item>
+        <item>1</item>
+    </string-array>
 </resources>
