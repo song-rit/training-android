@@ -2,8 +2,11 @@ package th.ac.sut.spinner;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +25,39 @@ public class SpinnerBasicExample extends AppCompatActivity {
         setContentView(R.layout.activity_spinner_basic_example);
 
         infixView();
+
         createYearData();
         createTermData();
 
+
         ArrayAdapter<Integer> adapterYear = new ArrayAdapter<Integer>(SpinnerBasicExample.this, R.layout.support_simple_spinner_dropdown_item, year);
         spinnerYear.setAdapter(adapterYear);
+        spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(getApplicationContext(), String.valueOf(year.get(position)), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         ArrayAdapter<Integer> adapterTerm = new ArrayAdapter<Integer>(SpinnerBasicExample.this, R.layout.support_simple_spinner_dropdown_item, term);
         spinnerTerm.setAdapter(adapterTerm);
+        spinnerTerm.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), String.valueOf(term.get(position)), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void createTermData() {
