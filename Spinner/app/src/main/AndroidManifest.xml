@@ -9,6 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SpinnerBasicExample">
+        </activity>
+        <activity android:name=".SpinnerCustomExample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

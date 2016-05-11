@@ -7,38 +7,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".SpinnerBasicExample">
+    tools:context="th.ac.sut.spinner.SpinnerCustomExample">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Basic Spinner Example"
+        android:text="Custom Spinner Example"
         android:textColor="@android:color/holo_green_light"
         android:textSize="20sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Spinner
+        android:id="@+id/spinner_family"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Spinner
-            android:id="@+id/spinner_year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/year"
-            android:padding="10dp"></Spinner>
-
-        <Spinner
-            android:id="@+id/spinner_term"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/term"
-            android:padding="10dp"></Spinner>
-
-    </LinearLayout>
+        android:entries="@array/year"
+        android:padding="10dp"></Spinner>
 </RelativeLayout>

@@ -29,7 +29,6 @@ public class SpinnerBasicExample extends AppCompatActivity {
         createYearData();
         createTermData();
 
-
         ArrayAdapter<Integer> adapterYear = new ArrayAdapter<Integer>(SpinnerBasicExample.this, R.layout.support_simple_spinner_dropdown_item, year);
         spinnerYear.setAdapter(adapterYear);
         spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
