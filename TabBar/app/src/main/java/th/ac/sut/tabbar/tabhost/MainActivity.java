@@ -13,6 +13,7 @@ import th.ac.sut.tabbar.tabhost.Tab3;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private LocalActivityManager localActivityManager;
     private TabHost tabHost;
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         localActivityManager = new LocalActivityManager(this, false);
         localActivityManager.dispatchCreate(savedInstanceState);
+
+
 
         infixView();
 

@@ -18,5 +18,7 @@ public class Tab1 extends Activity{
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear);
         linearLayout.setBackgroundColor(Color.parseColor("#f62355"));
+
+
     }
 }
