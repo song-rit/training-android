@@ -4,4 +4,20 @@
     <string name="app_sub_title">This is Sub Toolbar</string>
     <string name="menu_1">menu 1</string>
     <string name="menu_2">menu 2</string>
+    <string name="searchable">Searchable</string>
+    <string name="menu_search">menu_search</string>
+    <string name="app_result_tittle">Result Toolbar</string>
+    <string name="app_result_sub_title">result Sub Toolbar</string>
+
+    <string-array name="countries">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+    </string-array>
 </resources>
+
+
