@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_df7e7ab7d22951939bd61ac6ad5277edbf0e4143\classes.dex" />
+    </item>
+    <item
+        jar="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_0afdd5941b686c677c3f6c58e5ee689ed554fd04\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Developer\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_f8dc34c80a6387efd276b8ef324b30471a0728b4\classes.dex" />
+    </item>
+    <item
+        jar="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="cbf62265a8362433725616133eae61892b5ea09a">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_90f1d0d81bf6686be32e99697a7024b7e8ec1f28\classes.dex" />
+    </item>
+    <item
+        jar="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c8e136ad4b063c20cbc4c780968f57812c0d622e">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_93548f2b7fe7092578ac2941c52883a0c9738ad2\classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Toolbar</string>
+    <string name="app_title">Toolbar</string>
+    <string name="app_sub_title">This is Sub Toolbar</string>
+    <string name="menu_1">menu 1</string>
+    <string name="menu_2">menu 2</string>
+</resources>

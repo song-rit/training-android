@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\uranus.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\uranus.jpg"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mercury.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\mercury.jpg"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\saturn.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\saturn.jpg"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mars.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\mars.jpg"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\jupiter.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\jupiter.jpg"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\neptune.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\neptune.jpg"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\venus.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\venus.jpg"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\earth.jpg",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\NavigationDrawer\\app\\src\\main\\res\\drawable\\earth.jpg"
+    }
+]
