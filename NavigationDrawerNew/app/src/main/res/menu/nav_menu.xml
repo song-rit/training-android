@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_menu_1"
-        android:title="Option 1" />
+        android:id="@+id/nav_new"
+        android:icon="@drawable/ic_new"
+        android:title="new" />
 
     <item
-        android:id="@+id/nav_menu_2"
-        android:title="Option 2" />
+        android:id="@+id/nav_delete"
+        android:icon="@drawable/ic_delete"
+        android:title="delete" />
 
     <item
-        android:id="@+id/nav_menu_3"
-        android:title="Option 3" />
+        android:id="@+id/nav_more"
+        android:title="More...">
+
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_setting"
+                android:title="setting" />
+        </menu>
+    </item>
 </menu>
