@@ -24,6 +24,8 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.search_result_toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSupportActionBar().setTitle(R.string.app_result_tittle);
         getSupportActionBar().setSubtitle(R.string.app_result_sub_title);
