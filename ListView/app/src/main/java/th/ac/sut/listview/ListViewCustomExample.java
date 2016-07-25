@@ -45,5 +45,4 @@ public class ListViewCustomExample extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView_custom);
     }
 
-
 }
