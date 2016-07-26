@@ -26,14 +26,14 @@
         jar="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="24.0.1"
-        sha1="cbf62265a8362433725616133eae61892b5ea09a">
+        sha1="81c74fc768e1e9aa2f6865ec0ad73102e528a20f">
         <dex dex="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_90f1d0d81bf6686be32e99697a7024b7e8ec1f28\classes.dex" />
     </item>
     <item
         jar="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="24.0.1"
-        sha1="c8e136ad4b063c20cbc4c780968f57812c0d622e">
+        sha1="864a5d4530dd4037d021c8401fb5c9870254ef83">
         <dex dex="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_93548f2b7fe7092578ac2941c52883a0c9738ad2\classes.dex" />
     </item>
 
