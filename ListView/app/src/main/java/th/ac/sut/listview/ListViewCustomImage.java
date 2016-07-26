@@ -44,7 +44,7 @@ public class ListViewCustomImage extends AppCompatActivity {
 
         ListViewCustomImageAdapter adapter = new ListViewCustomImageAdapter(getApplicationContext(), strList, resourceId);
 
-        listView = (ListView) findViewById(R.id.listView_custom);
+        listView = (ListView) findViewById(R.id.list_view_custom_image);
         listView.setAdapter(adapter);
     }
 }
