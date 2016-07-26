@@ -1,9 +1,12 @@
 package th.ac.sut.listview;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,14 @@ public class ListViewCustomExample extends AppCompatActivity {
 
         ladapter = new ListViewCustomAdapter(ListViewCustomExample.this, family);
         listView.setAdapter(ladapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String name = (String) parent.getItemAtPosition(position);
+                Toast.makeText(ListViewCustomExample.this, name, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void createFamilyData() {

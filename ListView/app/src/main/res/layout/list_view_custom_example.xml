@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ListViewBasicExample">
 
-
     <ListView
         android:id="@+id/listView_custom"
         android:layout_width="match_parent"
