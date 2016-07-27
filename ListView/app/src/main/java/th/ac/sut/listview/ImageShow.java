@@ -34,7 +34,6 @@ public class ImageShow extends AppCompatActivity {
             imageView.setImageResource(image.getResourceId());
             textView.setText(image.getName());
         }
-
     }
 
     private void infixView() {
