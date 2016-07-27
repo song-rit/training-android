@@ -11,7 +11,7 @@ import th.ac.sut.gridview.adapter.GridViewCustomAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GridView gridView;
+    GridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,17 +20,20 @@ public class MainActivity extends AppCompatActivity {
 
         infixView();
 
-        gridView.setAdapter(new GridViewCustomAdapter(MainActivity.this));
+        gridView.setAdapter(new GridViewCustomAdapter(this));
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "" + String.valueOf(position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "" + String.valueOf(position), Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
     private void infixView() {
+
         gridView = (GridView) findViewById(R.id.grid_view);
+
     }
 }

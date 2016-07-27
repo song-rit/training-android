@@ -10,9 +10,10 @@ import android.widget.ImageView;
 import th.ac.sut.gridview.R;
 
 /**
- * Created by developer on 13/5/2559.
+ * Created by Developer on 27/7/2559.
  */
-public class GridViewCustomAdapter extends BaseAdapter{
+public class GridViewCustomAdapter extends BaseAdapter {
+
     private Context context;
 
     public GridViewCustomAdapter(Context context) {
@@ -21,7 +22,7 @@ public class GridViewCustomAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return 24;
+        return 23;
     }
 
     @Override
@@ -39,17 +40,17 @@ public class GridViewCustomAdapter extends BaseAdapter{
 
         ImageView imageView;
 
-        if(convertView == null) {
-
+        if (convertView == null) {
             imageView = new ImageView(context);
-            imageView.setLayoutParams(new GridView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+            imageView.setLayoutParams(new GridView.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, 200
+            ));
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setPadding(4, 4, 4, 4);
         } else {
             imageView = (ImageView) convertView;
         }
-
-        imageView.setImageResource(R.drawable.doraemon);
+        imageView.setImageResource(R.drawable.chinjung);
         return imageView;
     }
 }
