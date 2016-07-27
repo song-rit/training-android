@@ -8,9 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
 import th.ac.sut.listview.R;
+import th.ac.sut.listview.model.Image;
 
 /**
  * Created by Developer on 26/7/2559.
@@ -18,45 +19,44 @@ import th.ac.sut.listview.R;
 public class ListViewCustomImageAdapter extends BaseAdapter {
 
     Context context;
-    String[] strName;
-    int[] resourceId;
+    ArrayList<Image>  images = new ArrayList<>();
 
-    public ListViewCustomImageAdapter(Context context, String[] strName, int[] resId) {
+    public ListViewCustomImageAdapter(Context context, ArrayList<Image> images) {
         this.context = context;
-        this.strName = strName;
-        this.resourceId = resId;
+        this.images = images;
     }
 
     @Override
     public int getCount() {
-        return strName.length;
+        return images.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return images.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        Image image = (Image) getItem(position);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.list_view_custom_image, parent, false);
+        View view = inflater.inflate(R.layout.list_view_custom_image2, parent, false);
 
         if(view == null) {
-            view = inflater.inflate(R.layout.list_view_custom_image, parent, false);
+            view = inflater.inflate(R.layout.list_view_custom_image2, parent, false);
         }
 
         TextView textView = (TextView) view.findViewById(R.id.text_view_name);
-        textView.setText(strName[position]);
+        textView.setText(image.getName());
 
         ImageView imageView = (ImageView) view.findViewById(R.id.image_view_pic);
-        imageView.setBackgroundResource(resourceId[position]);
+        imageView.setBackgroundResource(image.getResourceId());
         return view;
     }
 }
