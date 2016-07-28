@@ -9,6 +9,8 @@ import android.view.Window;
 public class SplashScreen extends AppCompatActivity {
     private Handler handler;
     private Runnable runnable;
+    long delay_time;
+    long time = 3000L;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +51,18 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
+//        finish();
+        handler.removeCallbacks(runnable);
+        time = delay_time - (System.currentTimeMillis() - time);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        handler.postDelayed(runnable, 3000);
+        delay_time = time;
+        handler.postDelayed(runnable, delay_time);
+        time = System.currentTimeMillis();
+
     }
 
     @Override
