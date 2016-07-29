@@ -10,6 +10,51 @@
     tools:context="th.ac.sut.edittext.MainActivity">
 
     <EditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ชื่อ-นามสกุล"
+        android:inputType="text"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/edit_text_tel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_name"
+        android:hint="เบอร์ติดต่อ" />
+
+    <EditText
+        android:id="@+id/edit_text_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_tel"
+        android:hint="อีเมลล์" />
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/hr"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="1dp"
+        android:layout_below="@id/edit_text_email"
+        android:background="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hr" />
+
+    <TextView
+        android:id="@+id/text_view_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_name" />
+
+    <TextView
+        android:id="@+id/text_view_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_tel" />
 </RelativeLayout>
