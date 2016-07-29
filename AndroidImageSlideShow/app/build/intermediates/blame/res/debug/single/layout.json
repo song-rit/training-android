@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\build\\intermediates\\res\\merged\\debug\\layout\\vp_image.xml",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\src\\main\\res\\layout\\vp_image.xml"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_pdt_detail.xml",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\src\\main\\res\\layout\\fragment_pdt_detail.xml"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    }
+]

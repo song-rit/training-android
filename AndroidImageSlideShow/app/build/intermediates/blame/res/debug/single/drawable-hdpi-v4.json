@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_error.png",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\src\\main\\res\\drawable-hdpi\\ic_error.png"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_empty.png",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\src\\main\\res\\drawable-hdpi\\ic_empty.png"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\cygwin64\\home\\Developer\\github\\training-android\\AndroidImageSlideShow\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    }
+]
