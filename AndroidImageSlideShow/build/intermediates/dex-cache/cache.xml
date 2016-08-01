@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\libs\universal-image-loader-1.8.4-with-sources.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="eba3ec78458fcb9bdd8bb7eff1a2f6f26f8fa00a">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.8.4-with-sources_4953d873be54a9c014629c98b81a22a36dea2ee1\classes.dex" />
+    </item>
+    <item
+        jar="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="21ed9db1650f73ac716dcc8f6390d928750865ed">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_33a3414d031ff460c9d7f75fad65accb7e36b276\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Developer\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_318e564da790a36ff542171016f9aa8f1596f701\classes.dex" />
+    </item>
+    <item
+        jar="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="b21033e2c1cf1a414d5d537965a334a1164b52a0">
+        <dex dex="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3faaf73c945c4b81b4dbfc11d7bbf52fa6ae21e9\classes.dex" />
+    </item>
+
+</items>

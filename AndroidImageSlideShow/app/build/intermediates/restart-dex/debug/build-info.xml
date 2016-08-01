@@ -4,35 +4,30 @@
     api-level="23"
     density="xhdpi"
     format="7"
-    timestamp="8593352302455"
+    timestamp="12361436794027"
     token="-7229615047054050516" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="218" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="133" />
     <task
         name="verifier"
-        duration="0" />
+        duration="57" />
 
     <artifact
-        location="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-        type="DEX" />
+        location="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="6840378609365" >
+    <build timestamp="12361436794027" >
         <artifact
             location="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="8593352302455" >
-        <artifact
-            location="C:\cygwin64\home\Developer\github\training-android\AndroidImageSlideShow\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>
