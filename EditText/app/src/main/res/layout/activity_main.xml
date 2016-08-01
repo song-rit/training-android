@@ -32,12 +32,12 @@
         android:hint="อีเมลล์" />
 
     <View
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:id="@+id/hr"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_below="@id/edit_text_email"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:background="@color/colorPrimaryDark" />
 
     <TextView
@@ -57,4 +57,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_tel" />
+
+    <Button
+        android:text="ส่งข้อมูล"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_email" />
 </RelativeLayout>

@@ -1,15 +1,19 @@
 package th.ac.sut.edittext;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView textViewName, textViewTel, textViewEmail;
     EditText editTextName, editTextTel, editTextEmail;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra("textName", textViewName.getText());
+                intent.putExtra("textTel", textViewTel.getText());
+                intent.putExtra("textEmail", textViewEmail.getText());
+                startActivity(intent);
+
+            }
+        });
     }
 
     private void infixView() {
@@ -77,5 +93,6 @@ public class MainActivity extends AppCompatActivity {
         editTextName = (EditText) findViewById(R.id.edit_text_name);
         editTextTel = (EditText) findViewById(R.id.edit_text_tel);
         editTextEmail = (EditText) findViewById(R.id.edit_text_email);
+        button = (Button) findViewById(R.id.button);
     }
 }
