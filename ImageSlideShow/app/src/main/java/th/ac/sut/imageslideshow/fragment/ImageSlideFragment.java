@@ -14,12 +14,15 @@ import th.ac.sut.imageslideshow.R;
  */
 public class ImageSlideFragment extends Fragment {
 
+    String url = "https://docs.google.com/uc?authuser=0&id=0B_IchW5V8GCWMEV4X044Tm5OQkk&export=download";
+
     private final static String ARG_PARAM1 = "param1";
 
-    public static ImageSlideFragment newInstance() {
+    public static ImageSlideFragment newInstance(String param) {
         ImageSlideFragment fragment = new ImageSlideFragment();
 
         Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param);
         fragment.setArguments(args);
         return fragment;
     }

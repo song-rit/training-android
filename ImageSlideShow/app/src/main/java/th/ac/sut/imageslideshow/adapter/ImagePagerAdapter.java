@@ -9,12 +9,15 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 public class ImagePagerAdapter extends FragmentPagerAdapter {
 
+    private final int PAGE_NUM = 0 ;
+
     public ImagePagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
+
         return null;
     }
 
