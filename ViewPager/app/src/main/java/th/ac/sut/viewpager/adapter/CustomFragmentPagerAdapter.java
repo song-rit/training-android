@@ -11,11 +11,11 @@ import th.ac.sut.viewpager.fragment.FragmentTwo;
 /**
  * Created by Developer on 29/7/2559.
  */
-public class MyPagerAdapter extends FragmentPagerAdapter {
+public class CustomFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private final int PAGE_NUM = 3;
 
-    public MyPagerAdapter(FragmentManager fm) {
+    public CustomFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -33,11 +33,11 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 //        }
 
         if (position == 0) {
-            return new FragmentOne();
+            return FragmentOne.newInstance("Hello Fragment One");
         } else if (position == 1) {
-            return new FragmentTwo();
+            return FragmentTwo.newInstance("Hello Fragment Two");
         } else if (position == 2) {
-            return new FragmentThree();
+            return FragmentThree.newInstance("Hello Fragment Three");
         }
         return null;
     }

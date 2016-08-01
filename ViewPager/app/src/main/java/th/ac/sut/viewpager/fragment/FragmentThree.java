@@ -6,19 +6,43 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import th.ac.sut.viewpager.R;
 
 /**
  * Created by Developer on 29/7/2559.
  */
-public class FragmentThree extends Fragment {
 
-    @Nullable
+public class FragmentThree extends Fragment {
+    private TextView textView;
+    private static final String ARG_PARMAM1 = "message";
+    private String msg;
+
+    public static FragmentThree newInstance(String message) {
+        FragmentThree fragment = new FragmentThree();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARMAM1, message);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        return super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_three, container, false);
-        return rootView;
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments() != null) {
+            msg = getArguments().getString(ARG_PARMAM1);
+        }
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_three, container, false);
+        textView = (TextView) view.findViewById(R.id.text_view);
+        textView.setText(msg);
+        return view;
     }
 }

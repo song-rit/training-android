@@ -1,17 +1,16 @@
 package th.ac.sut.viewpager;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 
-import th.ac.sut.viewpager.adapter.MyPagerAdapter;
+import th.ac.sut.viewpager.adapter.CustomFragmentPagerAdapter;
+import th.ac.sut.viewpager.adapter.CustomFragmentStatePagerAdapter;
 
-public class ViewPagerBasic extends FragmentActivity {
+public class ViewPagerBasic extends AppCompatActivity {
 
-    MyPagerAdapter myPagerAdapter;
+    CustomFragmentPagerAdapter myPagerAdapter;
     ViewPager viewPager;
 //    Button buttonNext;
 //    Button buttonPrevious;
@@ -26,9 +25,9 @@ public class ViewPagerBasic extends FragmentActivity {
 
         infixView();
 
-        myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
 
-        MyPagerAdapter adapter = myPagerAdapter;
+
+        PagerAdapter adapter = new CustomFragmentStatePagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(position);
 
