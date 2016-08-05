@@ -32,7 +32,7 @@ public class ThreadBasic extends AppCompatActivity {
 //        runnable.run();
         handler.postDelayed(runnable, 3000);
     }
-    
+
     public void basicThread() {
         Thread thread = new Thread(new Runnable() {
             @Override
