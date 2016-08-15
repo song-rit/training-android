@@ -5,13 +5,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
-
 import java.io.IOException;
-
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
 
 public class OkHttpGetBasic extends AppCompatActivity {
 
@@ -64,7 +61,6 @@ public class OkHttpGetBasic extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         };
         thread.start();
@@ -79,5 +75,4 @@ public class OkHttpGetBasic extends AppCompatActivity {
             return response.body().string();
         }
     }
-
 }

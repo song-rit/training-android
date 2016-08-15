@@ -54,14 +54,13 @@ public class OKHttpPostBasic extends AppCompatActivity {
             @Override
             public void run() {
                 super.run();
-                OKHttpPostBasic postBasic = new OKHttpPostBasic();
-                String json = postBasic.bowlingJson("Jib", "Jo");
+                String json = bowlingJson("Jib", "Jo");
                 try {
-                    final String response = postBasic.post(url, json);
+                    final String response = post(url, json);
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-//                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                           Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                         }
                     });
                 } catch (IOException e) {
@@ -71,7 +70,7 @@ public class OKHttpPostBasic extends AppCompatActivity {
             }
         };
 
-        thread.run();
+        thread.start();
 
     }
 }

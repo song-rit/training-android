@@ -11,11 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".OkHttpGetBasic">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -26,7 +21,11 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".OKHttpPostBasic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
