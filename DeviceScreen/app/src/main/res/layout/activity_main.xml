@@ -33,6 +33,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_resolution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -59,6 +60,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_resolution_dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -85,6 +87,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -111,6 +114,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_screen_diagonal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -137,6 +141,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_actual_dpi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -163,6 +168,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_dpi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -189,6 +195,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -209,6 +216,7 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/text_view_density"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
