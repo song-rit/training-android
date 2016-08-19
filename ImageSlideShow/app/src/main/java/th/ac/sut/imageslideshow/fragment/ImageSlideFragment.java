@@ -3,10 +3,12 @@ package th.ac.sut.imageslideshow.fragment;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.annotation.UiThread;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import th.ac.sut.imageslideshow.R;
+import th.ac.sut.imageslideshow.adapter.ImageSlideAdapter;
 import th.ac.sut.imageslideshow.model.ImageModel;
 import th.ac.sut.imageslideshow.model.ProductModel;
 import th.ac.sut.imageslideshow.utils.CheckNetworkConnection;
@@ -30,12 +33,19 @@ import th.ac.sut.imageslideshow.utils.CheckNetworkConnection;
  * Created by Developer on 1/8/2559.
  */
 public class ImageSlideFragment extends Fragment {
-
+    private static final long ANIM_VIEWPAGER_DELAY = 5000;
+    private static final long ANIM_VIEWPAGER_DELAY_USER_VIEW = 10000;
     String url = "https://docs.google.com/uc?authuser=0&id=0B_IchW5V8GCWMEV4X044Tm5OQkk&export=download";
 
     private ImageModel imageModel;
+    private FragmentActivity activity;
+    private ViewPager pager;
+    private Handler handler;
+    private Runnable animateViewPager;
+    boolean stopSliding = false;
+
     TextView textViewImageName;
-    FragmentActivity activity;
+
 
     private final static String ARG_PARAM1 = "param1";
 
@@ -52,19 +62,44 @@ public class ImageSlideFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = getActivity();
+
+    }
+
+    private void infixView(View view) {
+        pager = (ViewPager) view.findViewById(R.id.view_pager);
+    }
+
+    public void runnable(final int size) {
+        handler = new Handler();
+        animateViewPager = new Runnable() {
+            public void run() {
+                if (!stopSliding) {
+                    if (pager.getCurrentItem() == size - 1) {
+                        pager.setCurrentItem(0);
+                    } else {
+                        pager.setCurrentItem(
+                                pager.getCurrentItem() + 1, true);
+                    }
+                    handler.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
+                }
+            }
+        };
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_image_slide, container, false);
+        View view =  inflater.inflate(R.layout.fragment_image_slide, container, false);
+        infixView(view);
+
+        return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        textViewImageName = (TextView) view.findViewById(R.id.text_view_image_name);
+//        textViewImageName = (TextView) view.findViewById(R.id.text_view_image_name);
     }
 
     @Override
@@ -89,15 +124,20 @@ public class ImageSlideFragment extends Fragment {
                     try {
                         final String responseString = HTTPGetRequest(url);
                         final Gson gson = new Gson();
-                        final ImageModel imageModel = gson.fromJson(responseString, ImageModel.class);
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-//                                Toast.makeText(getContext(), imageModel.getStatus(), Toast.LENGTH_SHORT).show();
-                                Toast.makeText(getContext(), gson.toJson(imageModel.getProducts()), Toast.LENGTH_LONG).show();
+                        imageModel = gson.fromJson(responseString, ImageModel.class);
+                        pager.setAdapter(new ImageSlideAdapter(imageModel.getProducts(), activity, ImageSlideFragment.this));
+                        runnable(imageModel.getProducts().size());
+                        //Re-run callback
+                        handler.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
 
-                            }
-                        });
+//                        getActivity().runOnUiThread(new Runnable() {
+//                            @Override
+//                            public void run() {
+////                                Toast.makeText(getContext(), imageModel.getStatus(), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getContext(), gson.toJson(imageModel.getProducts()), Toast.LENGTH_LONG).show();
+//
+//                            }
+//                        });
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

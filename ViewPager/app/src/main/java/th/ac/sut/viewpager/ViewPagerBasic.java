@@ -25,8 +25,6 @@ public class ViewPagerBasic extends AppCompatActivity {
 
         infixView();
 
-
-
         PagerAdapter adapter = new CustomFragmentStatePagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(position);
