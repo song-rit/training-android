@@ -13,8 +13,6 @@ import th.ac.sut.imageslideshow.model.ImageModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageModel imageModel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,20 +24,5 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.frame_layout, myFragment);
         transaction.commit();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if(imageModel == null) {
-            sendRequest();
-        }
-    }
-
-    private void sendRequest() {
-
-        Gson gson = new Gson();
-
     }
 }
