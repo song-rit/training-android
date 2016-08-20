@@ -46,7 +46,6 @@ public class ImageSlideFragment extends Fragment {
 
     TextView textViewImageName;
 
-
     private final static String ARG_PARAM1 = "param1";
 
     public static ImageSlideFragment newInstance(String param) {
@@ -91,14 +90,12 @@ public class ImageSlideFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_image_slide, container, false);
         infixView(view);
-
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
 //        textViewImageName = (TextView) view.findViewById(R.id.text_view_image_name);
     }
 
@@ -116,6 +113,8 @@ public class ImageSlideFragment extends Fragment {
     private void sendRequest() {
 
         if (CheckNetworkConnection.isConnectionAvailable(activity)) {
+
+
             Thread thread = new Thread() {
 
                 @Override
@@ -125,19 +124,22 @@ public class ImageSlideFragment extends Fragment {
                         final String responseString = HTTPGetRequest(url);
                         final Gson gson = new Gson();
                         imageModel = gson.fromJson(responseString, ImageModel.class);
+
+
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getContext(), gson.toJson(imageModel.getProducts()), Toast.LENGTH_LONG).show();
+
+
+
                         pager.setAdapter(new ImageSlideAdapter(imageModel.getProducts(), activity, ImageSlideFragment.this));
                         runnable(imageModel.getProducts().size());
                         //Re-run callback
                         handler.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
+                            }
+                        });
 
-//                        getActivity().runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-////                                Toast.makeText(getContext(), imageModel.getStatus(), Toast.LENGTH_SHORT).show();
-//                                Toast.makeText(getContext(), gson.toJson(imageModel.getProducts()), Toast.LENGTH_LONG).show();
-//
-//                            }
-//                        });
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
