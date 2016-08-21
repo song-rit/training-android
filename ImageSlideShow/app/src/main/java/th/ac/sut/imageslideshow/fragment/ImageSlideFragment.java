@@ -66,6 +66,8 @@ public class ImageSlideFragment extends Fragment {
 
     private void infixView(View view) {
         pager = (ViewPager) view.findViewById(R.id.view_pager);
+        textViewImageName = (TextView) view.findViewById(R.id.text_view_image_name);
+
     }
 
     public void runnable(final int size) {
@@ -88,8 +90,9 @@ public class ImageSlideFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_image_slide, container, false);
+        View view = inflater.inflate(R.layout.fragment_image_slide, container, false);
         infixView(view);
+        pager.setOnPageChangeListener(new PagerListener());
         return view;
     }
 
@@ -107,13 +110,25 @@ public class ImageSlideFragment extends Fragment {
             sendRequest();
         } else {
 
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    ImageSlideAdapter adapter = new ImageSlideAdapter(imageModel.getProducts(), activity, ImageSlideFragment.this);
+                    pager.setAdapter(adapter);
+                    runnable(imageModel.getProducts().size());
+
+                    handler.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
+                    textViewImageName.setText(imageModel.getProducts().get(pager.getCurrentItem()).getName());
+                }
+            });
+
         }
     }
 
     private void sendRequest() {
 
         if (CheckNetworkConnection.isConnectionAvailable(activity)) {
-
 
             Thread thread = new Thread() {
 
@@ -125,18 +140,18 @@ public class ImageSlideFragment extends Fragment {
                         final Gson gson = new Gson();
                         imageModel = gson.fromJson(responseString, ImageModel.class);
 
-
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(getContext(), gson.toJson(imageModel.getProducts()), Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getContext(), gson.toJson(imageModel.getProducts()), Toast.LENGTH_LONG).show();
 
 
-
-                        pager.setAdapter(new ImageSlideAdapter(imageModel.getProducts(), activity, ImageSlideFragment.this));
-                        runnable(imageModel.getProducts().size());
-                        //Re-run callback
-                        handler.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
+                                ImageSlideAdapter adapter = new ImageSlideAdapter(imageModel.getProducts(), activity, ImageSlideFragment.this);
+                                pager.setAdapter(adapter);
+                                runnable(imageModel.getProducts().size());
+                                //Re-run callback
+                                handler.postDelayed(animateViewPager, ANIM_VIEWPAGER_DELAY);
+                                textViewImageName.setText(imageModel.getProducts().get(pager.getCurrentItem()).getName());
                             }
                         });
 
@@ -167,4 +182,22 @@ public class ImageSlideFragment extends Fragment {
         }
     }
 
+    private class PagerListener implements ViewPager.OnPageChangeListener {
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            textViewImageName.setText(imageModel.getProducts().get(position).getName());
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    }
 }

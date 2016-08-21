@@ -1,5 +1,7 @@
 package th.ac.sut.imageslideshow.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Developer on 1/8/2559.
  */
@@ -7,6 +9,8 @@ public class ProductModel {
 
     private int id;
     private String name;
+
+    @SerializedName("image_url")
     private String imageUrl;
 
     public int getId() {

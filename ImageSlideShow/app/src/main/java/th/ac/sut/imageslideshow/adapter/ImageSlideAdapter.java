@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
@@ -30,14 +31,12 @@ import th.ac.sut.imageslideshow.model.ProductModel;
  * Created by Developer on 19/8/2559.
  */
 public class ImageSlideAdapter extends PagerAdapter {
-
-    private final int PAGE_NUM = 0;
+    ImageLoader imageLoader = ImageLoader.getInstance();
     ArrayList<ProductModel> productModels;
     FragmentActivity activity;
     ImageSlideFragment fragment;
     DisplayImageOptions options;
     private ImageLoadingListener imageListener;
-    ImageLoader imageLoader = ImageLoader.getInstance();
 
     public ImageSlideAdapter(final ArrayList<ProductModel> productModels, final FragmentActivity activity, ImageSlideFragment fragment) {
         this.productModels = productModels;
@@ -49,28 +48,31 @@ public class ImageSlideAdapter extends PagerAdapter {
                 .showImageForEmptyUri(R.drawable.ic_empty).cacheInMemory()
                 .cacheOnDisc().build();
         imageListener = new ImageDisplayListener();
+        imageLoader.init(ImageLoaderConfiguration.createDefault(activity.getApplicationContext()));
+
+    }
+
+    @Override
+    public int getCount() {
+        return productModels.size();
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup container, final int position) {
+        LayoutInflater inflater = (LayoutInflater) activity
+                .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.image_slide, container, false);
+
+        ImageView image = (ImageView) view.findViewById(R.id.image_display);
 
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Gson gson = new Gson();
-                Toast.makeText(activity, gson.toJson(productModels), Toast.LENGTH_LONG).show();
+               Toast.makeText(activity, gson.toJson(productModels.get(position).getImageUrl()), Toast.LENGTH_LONG).show();
             }
         });
-    }
 
-    @Override
-    public int getCount() {
-        return 0;
-    }
-
-    @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-        LayoutInflater inflater = (LayoutInflater) activity
-                .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.image_slide, container, false);
-
-        ImageView image = (ImageView) view.findViewById(R.id.image_view);
         imageLoader.displayImage((productModels.get(position)).getImageUrl(), image, options, imageListener);
         container.addView(view);
         return view;

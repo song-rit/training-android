@@ -7,14 +7,14 @@ import java.util.ArrayList;
  */
 public class ImageModel {
 
-    private String status;
+    private boolean status;
     private ArrayList<ProductModel> products;
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
