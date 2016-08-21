@@ -34,13 +34,19 @@
             android:layout_width="match_parent"
             android:layout_height="150dp" />
 
+        <th.ac.sut.imageslideshow.utils.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp" />
+
         <TextView
             android:id="@+id/text_view_image_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#88343434"
             android:text="image name" />
-
     </LinearLayout>
 
 </LinearLayout>
