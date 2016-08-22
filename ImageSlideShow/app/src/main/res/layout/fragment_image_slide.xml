@@ -48,5 +48,4 @@
             android:background="#88343434"
             android:text="image name" />
     </LinearLayout>
-
 </LinearLayout>
