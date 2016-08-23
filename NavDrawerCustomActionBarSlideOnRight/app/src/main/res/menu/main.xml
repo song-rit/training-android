@@ -2,8 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/menu_right"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="menuRight"
+        android:icon="@drawable/ic_dehaze_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_search"
+        android:orderInCategory="1"
+        android:title="menuSearch"
+        android:icon="@drawable/ic_search_black_24dp"
+        app:showAsAction="always" />
 </menu>

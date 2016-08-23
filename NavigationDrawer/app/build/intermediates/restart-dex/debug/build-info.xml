@@ -4,25 +4,28 @@
     api-level="23"
     density="xhdpi"
     format="7"
-    timestamp="29529520506865"
+    timestamp="14306346575154"
     token="5094405522374322685" >
 
     <task
         name="javac"
-        duration="117" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="44" />
+        duration="0" />
     <task
         name="verifier"
-        duration="19" />
+        duration="0" />
 
     <artifact
-        location="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\cygwin64\home\Developer\github\training-android\NavigationDrawer\app\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
 
     <build timestamp="29529520506865" >
         <artifact
