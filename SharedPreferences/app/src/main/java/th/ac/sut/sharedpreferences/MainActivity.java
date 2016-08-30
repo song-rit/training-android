@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sp.edit();
                                 editor.putString(Constant.SharePreference.NAME, login.getData().getName());
                                 editor.putString(Constant.SharePreference.LAST_NAME, login.getData().getLastName());
-                                editor.putString(Constant.SharePreference.MAJOR, login.getData().getLastName());
+                                editor.putString(Constant.SharePreference.MAJOR, login.getData().getMajor());
                                 editor.putString(Constant.SharePreference.UNIVERSITY, login.getData().getUniversity());
                                 editor.commit();
 
