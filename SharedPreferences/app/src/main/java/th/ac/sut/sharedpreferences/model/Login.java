@@ -40,44 +40,46 @@ public class Login {
     public void setData(Data data) {
         this.data = data;
     }
+
+    public class Data {
+
+        private String name;
+        private String lastName;
+        private String major;
+        private String university;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public String getMajor() {
+            return major;
+        }
+
+        public void setMajor(String major) {
+            this.major = major;
+        }
+
+        public String getUniversity() {
+            return university;
+        }
+
+        public void setUniversity(String university) {
+            this.university = university;
+        }
+    }
+
 }
 
-class Data {
-
-    private String name;
-    private String lastName;
-    private String major;
-    private String university;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
-    public String getUniversity() {
-        return university;
-    }
-
-    public void setUniversity(String university) {
-        this.university = university;
-    }
-}

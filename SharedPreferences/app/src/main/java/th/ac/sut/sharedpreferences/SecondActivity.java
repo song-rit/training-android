@@ -17,8 +17,11 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        SharedPreferences sp = getSharedPreferences(Constant.PREFS_LOGIN, MODE_PRIVATE);
-        String name = sp.getString("name", "");
-        Toast.makeText(SecondActivity.this, name, Toast.LENGTH_SHORT).show();
+        SharedPreferences sp = getSharedPreferences(Constant.SharePreference.LOG_IN, MODE_PRIVATE);
+        String name = sp.getString(Constant.SharePreference.NAME, "");
+        String lastName = sp.getString(Constant.SharePreference.LAST_NAME, "");
+        String major = sp.getString(Constant.SharePreference.MAJOR, "");
+        String university = sp.getString(Constant.SharePreference.UNIVERSITY, "");
+
     }
 }

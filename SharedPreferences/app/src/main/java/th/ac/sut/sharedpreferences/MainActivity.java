@@ -1,12 +1,14 @@
 package th.ac.sut.sharedpreferences;
 
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,14 +31,13 @@ public class MainActivity extends AppCompatActivity {
     private Button button;
     EditText editTextUserName;
     EditText editTextPassWord;
-
     private String userName;
     private String passWord;
+    private ProgressDialog progress;
+
+
 
     OkHttpClient client = new OkHttpClient();
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,54 +50,56 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                progressShow();
+
                 userName = editTextUserName.getText().toString();
                 passWord = editTextPassWord.getText().toString();
                 final StringBuffer responseString = new StringBuffer("");
 
-                    Thread thread = new Thread() {
-                        @Override
-                        public void run() {
-                            super.run();
-                            try {
-                                final String responseString = HTTPGet2(Constant.URL_LOGIN);
-                                Gson gson = new Gson();
-                                final Login login = gson.fromJson(responseString.toString(), Login.class);
-                                if(login.getStatus() && editTextUserName.getText().equals(login.getUserName()) && editTextPassWord.getText().equals(login.getPassWord())) {
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(MainActivity.this, "Log in Success", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                                            startActivity(intent);
-                                        }
-                                    });
-                                } else {
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(MainActivity.this, "Log in Fail", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                                }
+                Thread thread = new Thread() {
+                    @Override
+                    public void run() {
+                        super.run();
+                        try {
+                            final String responseString = HTTPGet2(Constant.URL_LOGIN);
+                            Gson gson = new Gson();
+                            final Login login = gson.fromJson(responseString.toString(), Login.class);
+                            if (login.getStatus() && editTextUserName.getText().toString().equals(login.getUserName()) && editTextPassWord.getText().toString().equals(login.getPassWord())) {
 
+                                SharedPreferences sp = getSharedPreferences(Constant.SharePreference.LOG_IN, Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sp.edit();
+                                editor.putString(Constant.SharePreference.NAME, login.getData().getName());
+                                editor.putString(Constant.SharePreference.LAST_NAME, login.getData().getLastName());
+                                editor.putString(Constant.SharePreference.MAJOR, login.getData().getLastName());
+                                editor.putString(Constant.SharePreference.UNIVERSITY, login.getData().getUniversity());
+                                editor.commit();
 
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        progress.hide();
+                                        Toast.makeText(MainActivity.this, "Log in Success", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                            } else {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(MainActivity.this, "Log in Fail", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                             }
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-                    };
-                    thread.start();
-
-
-
+                    }
+                };
+                thread.start();
             }
         });
-
-        SharedPreferences sp = getSharedPreferences(Constant.PREFS_LOGIN, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.commit();
-
-
     }
 
     private void infixView() {
@@ -126,5 +129,14 @@ public class MainActivity extends AppCompatActivity {
         try (Response response = client.newCall(request).execute()) {
             return response.body().string();
         }
+    }
+
+    private void progressShow() {
+        progress= new ProgressDialog(MainActivity.this);
+        progress.setMessage("Waiting..");
+        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progress.setCancelable(false);
+        progress.setIndeterminate(true);
+        progress.show();
     }
 }
